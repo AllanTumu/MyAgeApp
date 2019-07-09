@@ -30,6 +30,10 @@ class MainActivity : AppCompatActivity() {
             return
         }
         val curYear = Calendar.getInstance().get(Calendar.YEAR)
+        if (yearOfBirth>=curYear){
+            output.text = "You can not be younger than the current year"
+            return
+        }
         val myAge = curYear - yearOfBirth
         output.text = "You are $myAge years old"
 
