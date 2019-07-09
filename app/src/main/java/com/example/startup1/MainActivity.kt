@@ -25,6 +25,10 @@ class MainActivity : AppCompatActivity() {
     //Method 2
     fun click(view:View){
         val yearOfBirth = YOB.text.toString().toInt()
+        if (yearOfBirth<=0){
+            output.text = "invalid input"
+            return
+        }
         val curYear = Calendar.getInstance().get(Calendar.YEAR)
         val myAge = curYear - yearOfBirth
         output.text = "You are $myAge years old"
